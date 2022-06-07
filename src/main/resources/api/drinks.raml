@@ -1,0 +1,23 @@
+#%RAML 1.0
+title: drinks
+version: v1
+baseUri: http://localhost:8081/drinks
+/createdrinks:
+  post:
+    description: drinks data creating 
+    body:
+      application/json:
+        example:
+          {
+            "name":"cococola",
+            "qty" : "1ltr",
+            "price" : "45" 
+          }
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              {
+                "message": "drinks data create successully"
+              }

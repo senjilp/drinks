@@ -1,0 +1,5 @@
+{
+"name":"cococola",
+"qty": "1ltr",
+"price": "45"
+}

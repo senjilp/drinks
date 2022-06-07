@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="drinks" format="json">
+      <types:shape format="weave" example="examples/drinks-4.txt"><![CDATA[%dw 2.0
+
+type drinks = {|
+  name: String, 
+  qty: String, 
+  price: String
+|} {"example": "{\\\"name\\\":\\\"cococola\\\",\\\"qty\\\":\\\"1ltr\\\",\\\"price\\\":\\\"45\\\"}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#eccf268d-d751-422a-b514-6c6ee3abfd6f">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="drinks"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#919110d0-c464-4c10-9bc4-8baa9e14c738">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="drinks"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
